@@ -1,0 +1,24 @@
+<div>
+	<table style="width: 500px" class="table table-striped table-bordered table-condensed" data-ng-if="people.length>0">
+	<thead>
+		<tr>
+			<th style="text-align: center;">First Name</th>
+			<th style="text-align: center;">Last Name</th>
+			<th style="text-align: center;">Contact</th>
+		</tr>
+		<tr>
+			<td><input type="text"  style="text-align: center;" class="form-control" placeholder="first name" data-ng-model="firstName"/></td>
+			<td><input type="text"  style="text-align: center;" class="form-control" placeholder="last name" data-ng-model="lastName"/></td>
+			<td><input type="text"  style="text-align: center;" class="form-control" placeholder="Contact Number" data-ng-model="phone"/></td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr data-ng-repeat = "person in filtered = ( people | filter:{firstName:firstName, lastName:lastName, phone:phone})">
+			<td style="text-align: center;">{{person.firstName}}</td>
+			<td style="text-align: center;">{{person.lastName}}</td>
+			<td style="text-align: center;">{{person.phone}}</td>
+		</tr>
+	</tbody>
+
+	</table>
+</div>

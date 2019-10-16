@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+	<head>
+		<title>Above Solutions - Shobhit Gupta</title>
+		<link rel="stylesheet" href="lib/bootstrap.css">
+		<script type="text/ng-template" id="partials/home.html.html"></script>
+		<script type="text/ng-template" id="partials/people.html"></script>
+		<style type="text/css">
+			* {
+			    margin: 0;
+			}
+			html, body {
+			    height: 100%;
+			}
+			.page-wrap {
+				min-height: 100%;
+				margin-bottom: -30px; 
+			}
+			.page-wrap:after {
+				content: "";
+				display: block;
+			}
+			.site-footer, .page-wrap:after {
+			    height: 30px; 
+			}
+			.site-footer {
+				background: #68B1F2;
+			}
+		</style>
+	</head>
+	<body data-ng-app="aboveSolnApp" ng-controller="peopleController" >
+		<div class="page-wrap">
+		  <header style="background: #F0F8FF">
+			  <h1 align="center" style="margin-top: 0px;">Above Solutions</h1>
+			  <hr>
+		  </header>
+		    
+		  <section ng-view>
+		  </section>
+		</div>
+
+		<footer class="site-footer">
+			<div align="center">&copy Shobhit Gupta</div>
+		</footer>
+	  
+		<script src="lib/jquery.min.js"></script>
+		<script src="lib/bootstrap.js"></script>
+		<script src="lib/angular.js"></script>
+		<script src="lib/angular-route.min.js"></script>
+
+		<script src="app/app.js"></script>
+
+		<script src="app/controllers/homeController.js"></script>
+		<script src="app/controllers/page2Controller.js"></script>
+		<script src="app/controllers/peopleController.js"></script>
+
+		<script src="app/directives/peopleDirective.js"></script>
+
+		<script src="app/services/aboveService.js"></script>
+	</body>
+</html>
