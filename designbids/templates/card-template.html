@@ -1,0 +1,11 @@
+<div class="card">
+  <div class="card-header prio-{{note.priority}}" data-noteid="{{note.id}}">
+  	
+  	<a ng-click="addNote()" title="add" ><span class="fa fa-plus-square"></span></a>
+  	<a ng-click="editNote()" title="edit"><span class="fa fa-pencil-square-o"></span></a>
+  	<a ng-click="deleteNote()" title="delete"><span class="fa fa-trash"></span></a>
+  </div>
+  <div class="card-block">
+    <p class="card-text">{{note.note}}</p>
+  </div>
+</div>

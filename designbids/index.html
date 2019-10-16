@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+	<head>
+		<title>Design Bids - Shobhit Gupta</title>
+		<link rel="stylesheet" href="lib\bootstrap-4.0.0-alpha.2-dist\css\bootstrap.min.css">
+		<link rel="stylesheet" href="lib\font-awesome-4.6.3\css\font-awesome.min.css">
+		<link rel="stylesheet" href="assets\style\style.css">
+	</head>
+	<body data-ng-app="designBidsApp" ng-controller="globalController" >
+		<div class="page-wrap">
+		  <header>
+			  	<div class="container-fluid">
+				  	<div class="row">
+			  		<div class="col-xs-12" style="top: 10px;"><h1 align="center">Design Bids</h1></div>
+			  		</div>
+				</div>
+				<hr>
+		  </header>
+		    
+		  <section ng-view style="margin-left:44px; margin-right: 44px">
+		  </section>
+		</div>
+
+		<footer class="site-footer">
+			<div  class="row footer-content">
+				<a class="col-xs-12 pull-left" style="color: black;" onclick="resetAppData()">Reset Application</a>
+				<div class="col-xs-12" align="center">&copy Shobhit Gupta</div>
+			</div>
+		</footer>
+
+	  
+		<script src="lib/jquery.min.js"></script>
+		<script src="lib\bootstrap-4.0.0-alpha.2-dist\js\bootstrap.js"></script>
+		<script src="lib/angular.js"></script>
+		<script src="lib/angular-route.min.js"></script>
+
+		<script type="text/javascript" src="assets\js\script.js"></script>	
+		<script src="app/app.js"></script>
+
+		<script src="app/controllers/globalController.js"></script>
+		<script src="app/controllers/loginController.js"></script>
+		<script src="app/controllers/homeController.js"></script>
+		
+		<!-- <script src="app/directives/peopleDirective.js"></script>
+ -->
+		<script src="app/services/loginService.js"></script>
+		<script src="app/services/homeService.js"></script>
+	</body>
+</html>

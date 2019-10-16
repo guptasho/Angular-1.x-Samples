@@ -1,0 +1,57 @@
+<div  style="position: relative;top: 20px;">
+	<div class="container-fluid">
+		<div class="row">
+			<div>
+			    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 "  ng-repeat="note in userNotes track by $index " style="display:inline-block">
+					<ng-include src="'templates/card-template.html'" scope="" onload=""></ng-include>
+				</div>
+			</div>
+		</div>
+	</div>
+	<center>
+		<button class="btn load-more-btn btn-default" ng-click="loadMore()" type="button">
+		  <span class="ng-scope"><small>•</small> Load more <small>•</small></span>
+		  <div class="md-ripple-container"></div>
+		</button>
+	</center>
+</div>
+
+
+<!-- add note modal -->
+<div class="modal fade add-note-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+
+	<div class="modal-content">
+	  	<div class="modal-header">
+		    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		      <span aria-hidden="true">&times;</span>
+		    </button>
+		    <div class="container-fluid">
+		    	<div class="row">
+		    		<h5 class="modal-title col-sm-6"><b>Note</b></h5>
+				    <div class="dropdown col-sm-4">
+					    <button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown"><span>Priority</span>
+					    <span class="caret"></span></button>
+					    <ul class="dropdown-menu">
+					      <li class="dropdown-header" ng-click="new.priority=1">priority1</li>
+					      <li class="dropdown-header" ng-click="new.priority=2">priority2</li>
+					      <li class="dropdown-header" ng-click="new.priority=3">priority3</li>
+					      <input type="hidden" name="options" ng-model="new.priority">
+					    </ul>
+					</div>
+		    	</div>
+		    </div>
+		    
+		</div>
+
+	    <div class="modal-body">
+			<textarea style="width: 100%;" ng-model="new.note" rows="5" placeholder="add your note text"></textarea>
+			</br>
+			<button class="btn btn-primary btn-sm pull-right" ng-click="addNoteToDB()" data-dismiss="modal"><span ng-if="new.id !=undefined">update</span><span ng-if="new.id == undefined">add</span></button>
+			<div class="exceed-alert alert-danger alert-dismissable ">
+	    		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+	           	 limit: 50 words!!
+	        </div>
+		</div>
+ 	</div>
+</div>
