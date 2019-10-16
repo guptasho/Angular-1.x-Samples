@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+	<head>
+		<title>OLX</title>
+		<link rel="stylesheet" href="lib/jquery-ui.min.css">
+		<link rel="stylesheet" href="lib/bootstrap.css">
+		<link rel="stylesheet" href="style/style.css">
+	</head>
+	<body data-ng-app="olxApp" ng-controller="categories" >
+	   
+	  <header >
+		 
+	  </header>
+	  
+	  
+	  <section>
+		
+		
+		<div class="categoriesDisplay">
+		<h3>Categories</h3>
+			<table class="table">
+			<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>View</th>
+			<th>Search Category</th>
+			<th>Not Homepage Category</th>
+			<th>Image</th>
+			<th>URL</th>
+			
+			</tr>
+			
+				
+			<tr ng-repeat="category in categoriesJSON">
+				
+				<td>{{category.id}}</td>
+				<td>{{category.name}}</td>
+				<td>{{category.view}}</td>
+				<td>{{category.search_category}}</td>
+				<td>{{category.not_homepage_category}}</td>
+				<td><img src="{{category.img}}"></img></td>
+				<td>{{category.url}}</td>
+				<td ng-if="category.children.length != 0" ng-click="toggleHide($event)">
+				Sub Category
+					<div class="children" >
+					
+						<table  class="table">
+							<tr>
+								<th>Id</th>
+								<th>Name</th>
+								<th>URL</th>
+								<th>View</th>
+								<th>Search Category</th>
+								<th>Display Order</th>
+								
+							</tr>
+							<tr ng-repeat="children in category.children">
+								<td>{{children.id}}</td>
+								<td>{{children.name}}</td>
+								<td>{{children.url}}</td>
+								<td>{{children.view}}</td>
+								<td>{{children.search_category}}</td>
+								<td>{{children.display_order}}</td>
+								<td ng-if="category.children != 0" ng-click="toggleHide($event)">
+								<div class="children">
+								
+								<table  class="table">
+									<tr>
+										<th>Id</th>
+										<th>Name</th>
+										<th>URL</th>
+										<th>View</th>
+										<th>Search Category</th>
+										<th>Display Order</th>
+									
+									</tr>
+									<tr ng-repeat="children in children.children">
+										<td>{{children.id}}</td>
+										<td>{{children.name}}</td>
+										<td>{{children.url}}</td>
+										<td>{{children.view}}</td>
+										<td>{{children.search_category}}</td>
+										<td>{{children.display_order}}</td>
+										
+									</tr>
+								</table>
+								
+								</td>		
+							</tr>
+						</table>
+					</div>
+				</td>			
+			</tr>
+			
+			</table>
+			
+		</div>
+	  </section>
+		
+	  <footer>
+				
+	  </footer>
+	  
+	   <script src="lib/jquery.min.js"></script>
+	   <script src="lib/bootstrap.js"></script>
+	   <script src="lib/jquery-ui.min.js"></script>
+	   <script src="lib/angular.js"></script>
+
+	   
+	   
+	   
+	   <script src="js/model/categoryModel.js"></script>
+	   <script src="data/categories.json"></script>
+	   
+	   <script src="js/app.js"></script>
+	   <script src="js/script.js"></script>
+	</body>
+</html>

@@ -1,0 +1,13 @@
+section{
+	width: 2050px;
+	
+}
+
+section .categoriesDisplay>h3{
+	width: 100%;
+}
+
+.categoriesDisplay table{
+	background: #F5F5F5 none repeat scroll 0% 0%;
+	color: #000;		
+}
