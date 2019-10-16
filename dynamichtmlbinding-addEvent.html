@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+<head>
+  <meta charset="utf-8" />
+  <title>dynamic html binding</title>
+
+</head>
+
+<body ng-controller="MainCtrl">
+  <p>Hello {{name}}!</p>
+  <div id="foo">
+  <button type="button" id="btn1" ng-click="addButton()">Click Me
+  </button>
+  </div>
+  
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+  <script>
+  var app = angular.module('plunker', []);
+
+  app.controller('MainCtrl', function($scope) {
+    $scope.name = 'World';
+
+    $scope.addButton = function() {
+      alert("button clicked");
+      var btnhtml = '<button type="button">Click Me</button>';
+      var newButt = angular.element(btnhtml);
+      newButt.bind('click', $scope.addButton);
+      angular.element(document.getElementById('foo')).append(newButt);
+    }
+  });
+  </script>
+  
+</body>
+
+</html>
